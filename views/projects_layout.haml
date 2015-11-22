@@ -1,0 +1,75 @@
+// projects_layout.haml
+
+!!!
+!!! XML
+!!! Strict
+%html{ :xmlns => "http://www.w3.org/1999/xhtml", :lang => "en", 'xml:lang' => "en" }
+  %head
+    %title
+      - if @page
+        = ["Borderland Media", " | ", @page.capitalize].join
+      - else 
+        Borderland Media
+    %meta{'http-equiv'=>"Content-Type", :content=>"text/html; charset=iso-8859-1"}/
+    %meta{'http-equiv'=>"Content-Language", :content=>"en-us"}/
+    %link{:href=>"/stylesheet.css", :media => "screen", :rel=>"stylesheet", :type=>"text/css"}/
+  %body.project-page
+    #navigation-bar
+      .left
+        %a.menu-button{ href: "" }
+          %img{ src: "/menu_icon.svg", alt: "Menu" } 
+        %span
+          %a{ href: "/" }
+            %strong Borderland Media, LLC
+      .right
+        %span
+          %a.language-button{ href: "" } 
+            %strong 日本語
+
+
+
+
+    .page-wrapper
+      = yield
+
+
+
+
+
+    #footer
+      %p.copyright= "&copy; #{Time.new.year} Borderland Media, LLC. All Rights Reserved."
+
+    = haml :'_navigation_modal'
+
+%script{ :src=> "http://code.jquery.com/jquery-1.10.2.min.js" }
+%script{ :src=> "/application.js" }
+:javascript
+  // Replace all SVG images with inline SVG
+  jQuery('img.svg').each(function(){
+      var $img = jQuery(this);
+      var imgID = $img.attr('id');
+      var imgClass = $img.attr('class');
+      var imgURL = $img.attr('src');
+
+      jQuery.get(imgURL, function(data) {
+          // Get the SVG tag, ignore the rest
+          var $svg = jQuery(data).find('svg');
+
+          // Add replaced image's ID to the new SVG
+          if(typeof imgID !== 'undefined') {
+              $svg = $svg.attr('id', imgID);
+          }
+          // Add replaced image's classes to the new SVG
+          if(typeof imgClass !== 'undefined') {
+              $svg = $svg.attr('class', imgClass+' replaced-svg');
+          }
+
+          // Remove any invalid XML tags as per http://validator.w3.org
+          $svg = $svg.removeAttr('xmlns:a');
+
+          // Replace image with new SVG
+          $img.replaceWith($svg);
+
+      }, 'xml');
+
+  });

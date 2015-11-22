@@ -1,0 +1,15 @@
+// projects.haml
+
+.project-pane
+  .left-arrow
+    %a{ href: "" }
+      %img.left-button{ src: "/arrow_icon.svg", alt: "Back" }
+  .center-content{ project_page: @page }
+    - projects = [ "ryuichisakamoto", "yoshitakaamano", "ericclapton", "lostintranslation", "marcjacobs" ]
+    - projects.each do | p |
+      - class_attr = if p == @page then "section selected" else "section" end
+      %div{ id: p, class: class_attr }
+        = haml :"project_pages/_#{p}"
+  .right-arrow
+    %a{ href: "" }
+      %img.right-button{ src: "arrow_icon.svg", alt: "Forward" }
