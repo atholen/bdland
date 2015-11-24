@@ -2,22 +2,28 @@
 
 #video
   %video{ autoplay: "", loop: "", poster: "/video_fallback.jpg" }
-    / <source src="polina.webm" type="video/webm">
-    - case rand(7)
+    - case @video_number
       - when 0
-        %source{ src: "/Video/Car_Donut.mp4", type: "video/mp4" }
+        %source{ src: "/Videos/Loop 9.webm", type: "video/webm" }
+        %source{ src: "/Videos/Loop 9.mp4", type: "video/mp4" }
       - when 1
-        %source{ src: "/Video/Loop_1b.mp4", type: "video/mp4" }
+        %source{ src: "/Videos/Loop 1.webm", type: "video/webm" }
+        %source{ src: "/Videos/Loop 1.mp4", type: "video/mp4" }
       - when 2
-        %source{ src: "/Video/Loop_2c.mp4", type: "video/mp4" }
+        %source{ src: "/Videos/Loop 2.webm", type: "video/webm" }
+        %source{ src: "/Videos/Loop 2.mp4", type: "video/mp4" }
       - when 3
-        %source{ src: "/Video/Loop_3b.mp4", type: "video/mp4" }
+        %source{ src: "/Videos/Loop 3.webm", type: "video/webm" }
+        %source{ src: "/Videos/Loop 3.mp4", type: "video/mp4" }
       - when 4
-        %source{ src: "/Video/Loop_6b.mp4", type: "video/mp4" }
+        %source{ src: "/Videos/Loop 6.webm", type: "video/webm" }
+        %source{ src: "/Videos/Loop 6.mp4", type: "video/mp4" }
       - when 5
-        %source{ src: "/Video/Loop_7b.mp4", type: "video/mp4" }
+        %source{ src: "/Videos/Loop 7.webm", type: "video/webm" }
+        %source{ src: "/Videos/Loop 7.mp4", type: "video/mp4" }
       - else
-        %source{ src: "/Video/Loop_8b.mp4", type: "video/mp4" }
+        %source{ src: "/Videos/Loop 8.webm", type: "video/webm" }
+        %source{ src: "/Videos/Loop 8.mp4", type: "video/mp4" }
 
 .work
   .upcoming.section

@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 gem 'rack'
 gem 'sinatra'
-gem 'haml'  
+gem 'haml'
+gem 'sass'  
 gem 'coffee-script'

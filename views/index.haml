@@ -2,7 +2,6 @@
 
 #video
   %video{ autoplay: "", loop: "", poster: "/video_fallback.jpg" }
-    / <source src="polina.webm" type="video/webm">
     - case @video_number
       - when 0
         %source{ src: "/Videos/Loop 9.webm", type: "video/webm" }
