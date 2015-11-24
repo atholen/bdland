@@ -45,7 +45,13 @@ end
 
 get '/:project' do
   @page = params[:project]
-  haml :projects, layout: :projects_layout
+  projects = [ "ryuichisakamoto", "yoshitakaamano", "ericclapton", "lostintranslation", "marcjacobs" ]
+
+  if projects.includes? @page
+    haml :projects, layout: :projects_layout
+  else
+    haml :'404'
+  end
 end
 
 get '/jp/' do
@@ -59,7 +65,11 @@ get '/jp/:project' do
   @jp = true
   @page = params[:project]
 
-  haml :projects, layout: :projects_layout
+  if projects.includes? @page
+    haml :projects, layout: :projects_layout
+  else
+    haml :'404'
+  end
 end
 
 not_found { haml :'404' }
