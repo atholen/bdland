@@ -28,6 +28,7 @@ set :public_dir, 'static'
 
 ################################# ROUTING #################################
 
+projects = [ "ryuichisakamoto", "yoshitakaamano", "ericclapton", "lostintranslation", "marcjacobs" ]
 
 get "/:name.css" do
   content_type 'text/css', :charset => 'utf-8'
@@ -45,12 +46,11 @@ end
 
 get '/:project' do
   @page = params[:project]
-  projects = [ "ryuichisakamoto", "yoshitakaamano", "ericclapton", "lostintranslation", "marcjacobs" ]
 
-  if projects.includes? @page
+  if projects.include? @page
     haml :projects, layout: :projects_layout
   else
-    haml :'404'
+    haml :'404', layout: :projects_layout
   end
 end
 
@@ -65,10 +65,10 @@ get '/jp/:project' do
   @jp = true
   @page = params[:project]
 
-  if projects.includes? @page
+  if projects.include? @page
     haml :projects, layout: :projects_layout
   else
-    haml :'404'
+    haml :'404', layout: :projects_layout
   end
 end
 
@@ -78,9 +78,11 @@ error { haml :'500' }
 __END__
 
 @@404
-%h3 404
-%p It seems this page is missing...
+.error-page
+  %h3 404
+  %p It seems this page is missing...
 
 @@505
-%h3 505 Error
-%p Something's gone wrong...
+.error-page
+  %h3 505 Error
+  %p Something's gone wrong...
