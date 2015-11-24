@@ -85,10 +85,11 @@ $(document).ready ->
     arrowListeners()
 
   if ! $("body").hasClass "project-page"
-    $(document).on 'scroll', () ->
-      scrollH = $(document).scrollTop()
-      videoH  = $("#video").height()
-      $("#navigation-bar").css "background-color", "rgba( 33, 33, 33, #{ scrollH / videoH } )" # 33's for dark grey ("almost black")
+    if ! $("#navigation-bar").hasClass "dark"
+      $(document).on 'scroll', () ->
+        scrollH = $(document).scrollTop()
+        videoH  = $("#video").height()
+        $("#navigation-bar").css "background-color", "rgba( 33, 33, 33, #{ scrollH / videoH } )" # 33's for dark grey ("almost black")
 
 
   $('.menu-button').on 'click', (e) ->

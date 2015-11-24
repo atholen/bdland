@@ -39,6 +39,7 @@ get "/:name.js" do
 end
 
 get '/' do
+  @video_number = rand( 7 )
   haml :index
 end
 
@@ -48,6 +49,7 @@ get '/:project' do
 end
 
 get '/jp/' do
+  @video_number = rand( 7 )
   @jp = true
   
   haml :'jp/index'
