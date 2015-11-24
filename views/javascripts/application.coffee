@@ -26,6 +26,13 @@ $(window).resize( ->
 ################## METHODS ####################
 
 
+addEmailLink = ->
+  if $("#email") != null
+    userName     = "sns"
+    hostName     = "borderlandmedia.net"
+    emailAddress = userName + "@" + hostName
+    $("#email").replaceWith "<a href='mailto:" + emailAddress + "'>" + emailAddress + "</a>"
+
 checkPageHeight = () ->
   paneH     = $(".project-pane").height()
   navH      = $("#navigation-bar").height()
@@ -80,6 +87,7 @@ arrowListeners = () ->
 
 $(document).ready ->
   checkPageHeight()
+  addEmailLink()
 
   if $("body").hasClass "project-page"
     arrowListeners()
