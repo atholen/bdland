@@ -18,28 +18,32 @@
       .left
         %a.menu-button{ href: "" }
           %img{ src: "/menu_icon.svg", alt: "Menu" } 
+          %img.blue{ src: "/menu_icon_blue.svg", alt: "Menu" } 
         %span
-          %a{ href: "/" }
-            %strong Borderland Media, LLC
+          - if @jp
+            %a{ href: "/jp/" }
+              %strong Borderland Media, LLC
+          - else
+            %a{ href: "/" }
+              %strong Borderland Media, LLC
       .right
         %span
-          %a.language-button{ href: "" } 
-            %strong 日本語
-
-
-
+          - if @jp
+            %a.language-button{ href: "/#{ @page }" } ENG
+          - else
+            %a.language-button{ href: "/jp/#{ @page }" } 日本語
+      #border-bottom
 
     .page-wrapper
       = yield
 
-
-
-
-
     #footer
       %p.copyright= "&copy; #{Time.new.year} Borderland Media, LLC. All Rights Reserved."
 
-    = haml :'_navigation_modal'
+    - if @jp
+      = haml :'jp/_navigation_modal'
+    - else
+      = haml :'_navigation_modal'
 
 %script{ :src=> "http://code.jquery.com/jquery-1.10.2.min.js" }
 %script{ :src=> "/application.js" }

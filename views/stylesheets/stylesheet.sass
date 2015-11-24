@@ -1,26 +1,59 @@
 // stylesheet.sass
 
-@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,900)
-@import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic)
-
-$serif      : "Libre Baskerville", "Times New Roman", serif
 $sans-serif : "Helvetica neue", Helvetica, Arial, sans-serif
+$japanense  : "Hiragino Kaku Gothic Pro", sans-serif
+
+\:lang(jp)
+  font-family: $japanense !important
+
+$almost-black: #212121
 
 
-// Japanese:
-// "Hiragino Kaku Gothic Pro",sans-serif
+::-webkit-scrollbar 
+  -webkit-appearance: none
+  width: 0px
+ 
+// ::-webkit-scrollbar-track 
+//   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+//   -webkit-border-radius: 0px
+//   background:rgba(28,28,28,0)
 
+// body::-webkit-scrollbar-track 
+//   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+//   -webkit-border-radius: 0px
+//   background: black !important
 
-// English:
-// "Helvetica Neue light”,sans-serif
-// https://www.myfonts.com/fonts/linotype/neue-helvetica/helvetica-45-light/
+// body::-webkit-scrollbar-track:window-inactive 
+//   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) 
+//   -webkit-border-radius: 0px
+//   background: black !important
 
+// ::-webkit-scrollbar-track:window-inactive 
+//   -webkit-box-shadow: inset 0 0 0px rgba(0,0,0,0) 
+//   background: rgba(28,28,28,0)
 
+// ::-webkit-scrollbar-thumb 
+//   -webkit-border-radius: 10px
+//   border-radius: 10px
+//   background: rgba(150,150,150,1) 
+//   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.4) 
 
+// ::-webkit-scrollbar:window-inactive
+//   width: 0px
 
-$light-gray : lighten( black, 85% )
-$faded-black: lighten( black, 25% )
-$link-color : lighten( $faded-black, 20% )
+@mixin simpleEase()
+  -webkit-transition: all 0.5s ease
+  -moz-transition: all 0.5s ease
+  -o-transition: all 0.5s ease
+  -ms-transition: all 0.5s ease
+  transition: all 0.5s ease
+
+@mixin simpleEaseFast()
+  -webkit-transition: all 0.25s ease
+  -moz-transition: all 0.25s ease
+  -o-transition: all 0.25s ease
+  -ms-transition: all 0.25s ease
+  transition: all 0.25s ease
 
 html, body 
   padding     : 0
@@ -42,13 +75,16 @@ html
       padding           : 0px
     h2
       font-weight: 200
-    .content-pane
+    .page-wrapper
       overflow-y        : hidden
       overflow-x        : hidden
+    &.no-scroll
+      overflow: hidden
 
 a
   text-decoration   : none
-  color             : #000
+  color             : $almost-black
+  @include simpleEaseFast()
   &:hover
     color: #0000ff
 
@@ -57,31 +93,57 @@ a
   position: fixed
   top: 0px
   width: 100%
-  background-color: rgba( 0, 0, 0, 0.8)
+  background-color: rgba( 33, 33, 33, 0 )
   color: white
   a
     text-decoration   : none
     color             : #FFF
+    @include simpleEaseFast()
     &:hover
       color: #0000ff
 
   .right
     float: right
-    margin-top: 10px
-    padding-bottom: 10px
+    margin-top: 8px
+    padding-bottom: 12px
     padding-right: 20px
+    .language-button
+      position: relative
+      top: 2px
+      font-size: small
   .left
     float: left
-    margin-top: 10px
-    padding-bottom: 10px
+    margin-top: 8px
+    padding-bottom: 12px
     padding-left: 20px
-    img
-      display: inline-block
-      width: 18px
+    a
       position: relative
-      top: 3px
-      -webkit-filter: invert(1)
-      filter: invert(1)
+      // svg
+      //   display: inline-block
+      //   width: 18px
+      //   position: relative
+      //   top: 7px
+      //   g
+      //     fill: white
+      //     @include simpleEaseFast()
+      //     &:hover
+      //       fill: blue
+      img
+        display: inline-block
+        width: 18px
+        position: relative
+        top: 4px
+        &:not(.blue)
+          -webkit-filter: invert(1)
+          filter: invert(1)
+        &.blue
+          position: absolute
+          top: 1px
+          left: 0px
+          opacity: 0
+          @include simpleEaseFast()
+          &:hover
+            opacity: 1
     span
       display: inline-block
       padding-left: 10px
@@ -90,43 +152,43 @@ a
 
 .section
   display: table
-  border-top: 1px solid black
+  border-top: 1px solid $almost-black
   width: 100%
   margin-top: 40px
   padding-top: 3px
   padding-bottom: 40px
+  color: $almost-black
   .title, .information
     display: table-cell
   .title
-    width: 30%
+    width: 25%
   .information
     ul
       list-style-type: none
       li:not(:first-child)
-        border-top: 1px solid black   
+        border-top: 1px solid $almost-black   
       li:not(:last-child)
         margin-bottom: 1.5em 
+    p
+      line-height: 1.2em
 
 .page-wrapper
   width: 100vw
-
   #video
     width: 100%
     video
       width: 100%     
-
   .about
     .information
       p:first-child
         margin-top: 0px     
-
   .work, .about
     margin-left: 20px
     margin-right: 20px
 
 #navigation-modal
   z-index: 1000
-  position: absolute
+  position: fixed
   top: 0
   left: 0
   width: 100vw
@@ -136,11 +198,13 @@ a
   display: none
   a
     color: white
+    @include simpleEaseFast()
     &:hover
       color: black
   .section
     border-top: 1px solid white
     margin-top: 20px
+    color: white
     .information
       li:not(:first-child)
         border-top: 1px solid white   
@@ -166,13 +230,13 @@ a
 #footer
   width: 100%
   text-align: right
-  border-top: 1px solid black
+  border-top: 1px solid $almost-black
   margin-top: 40px
+  color: $almost-black
   p
     padding-right: 10px
     margin-bottom: 13px
     font-size: small
-
 
 
 
@@ -184,27 +248,43 @@ a
   #navigation-bar
     z-index: 100
     background-color: rgba( 255, 255, 255, 1)
-    color: black
-    border-bottom: 1px solid black
+    color: $almost-black
+    // border-bottom: 1px solid $almost-black
+    a.menu-button
+      position: relative
+      img
+        display: inline-block
+        width: 18px
+        position: relative
+        top: 4px
+        &:not(.blue)
+          -webkit-filter: invert(0)
+          filter: invert(0)
+        &.blue
+          position: absolute
+          top: 1px
+          left: 0px
+          opacity: 0
+          @include simpleEaseFast()
+          &:hover
+            opacity: 1
     a
-      color: black
+      color: $almost-black
+      @include simpleEaseFast()
       &:hover
         color: #00F
-    img
-      display: inline-block
-      width: 18px
-      position: relative
-      top: 3px
-      -webkit-filter: invert(0)
-      filter: invert(0)
+    #border-bottom
+      border-bottom: 1px solid $almost-black
+      margin: 43px 20px 0px 20px
 
   .page-wrapper
     width: 100vw
     padding-top: 45px
+
   .project-pane
-    display: table
+    // display: table
     .left-arrow, .center-content, .right-arrow
-      display: table-cell
+      // display: table-cell
     .left-arrow, .right-arrow
       vertical-align: middle
       text-align: center
@@ -212,9 +292,10 @@ a
       img
         position: fixed
         top: 50vh
-        opacity: 50%
+        opacity: 0.4
+        @include simpleEaseFast()
         &:hover
-          opacity: 100%
+          opacity: 1
     .left-arrow
       img
         left: 20px
@@ -223,14 +304,38 @@ a
         transform: rotate(180deg)
         -webkit-transform: rotate(180deg)
         right: 20px
+    .center-content
+      margin-left: 20px
+      margin-right: 20px
+      .section
+        display: none
+        margin-top: 0px
+        color: $almost-black
+        border: none
+        .information
+          p:first-of-type
+            border-top: 1px solid $almost-black
+            padding-top: 0.5em
+          p
+            padding-right: 40px
+            img
+              width: 100% 
+              &.border
+                border: 1px solid $almost-black
+            .copyright
+              float: right
+              line-height: 0.8em
+              font-size: 0.6em
+          a
+            color: rgba( 0, 0, 0, 0.5 )
+            @include simpleEaseFast()
+            &:hover
+              color: blue
+        &.selected
+          display: table
 
-    .section
-      display: none
-      .information
-        p:first-of-type
-          border-top: 1px solid black
-          padding-top: 0.5em
-        img
-          width: 100%
-      &.selected
-        display: table
+  #footer
+    position: fixed
+    bottom: 0
+    &.not-fixed-to-bottom
+      position: static

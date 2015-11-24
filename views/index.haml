@@ -1,12 +1,15 @@
 // index.haml
 
 #video
-  %video{ autoplay: "", loop: "", poster: "the image" }
+  %video{ autoplay: "", loop: "", poster: "/NM_Landscapes_Still.jpg" }
     / <source src="polina.webm" type="video/webm">
-    - if rand(1) == 0
-      %source{ src: "/Car_Donuts.mp4", type: "video/mp4" }
-    - else
-      %source{ src: "/NM_Landscapes.mp4", type: "video/mp4" }
+    - case rand(3)
+      - when 0
+        %source{ src: "/Car_Donut.mp4", type: "video/mp4" }
+      - when 1
+        %source{ src: "/NM_Landscapes.mp4", type: "video/mp4" }
+      - else
+        %source{ src: "/SF.mp4", type: "video/mp4" }
 
 .work
   .upcoming.section
@@ -34,7 +37,7 @@
             %h2 Lost In Translation
         %li 
           %a{ href: "/marcjacobs" }
-            %h2 Client Work – Marc Jacobs
+            %h2 Commissioned Work – Marc Jacobs
 
 .about#about
   .section

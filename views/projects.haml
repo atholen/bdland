@@ -9,7 +9,10 @@
     - projects.each do | p |
       - class_attr = if p == @page then "section selected" else "section" end
       %div{ id: p, class: class_attr }
-        = haml :"project_pages/_#{p}"
+        - if @jp
+          = haml :"jp/project_pages/_#{p}"
+        - else
+          = haml :"project_pages/_#{p}"
   .right-arrow
     %a{ href: "" }
-      %img.right-button{ src: "arrow_icon.svg", alt: "Forward" }
+      %img.right-button{ src: "/arrow_icon.svg", alt: "Forward" }

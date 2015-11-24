@@ -5,25 +5,28 @@
 !!! Strict
 %html{ :xmlns => "http://www.w3.org/1999/xhtml", :lang => "en", 'xml:lang' => "en" }
   %head
-    %title
-      - if @page
-        = ["Borderland Media", " | ", @page.capitalize].join
-      - else 
-        Borderland Media
+    %title Borderland Media
     %meta{'http-equiv'=>"Content-Type", :content=>"text/html; charset=iso-8859-1"}/
     %meta{'http-equiv'=>"Content-Language", :content=>"en-us"}/
-    %link{:href=>"/stylesheet.css", :media => "screen", :rel=>"stylesheet", :type=>"text/css"}/
+    %link{:href=>"/stylesheet.css", :media => "screen", :rel=>"stylesheet", :type=>"text/css"}
   %body
     #navigation-bar
       .left
         %a.menu-button{ href: "" }
           %img{ src: "/menu_icon.svg", alt: "Menu" } 
+          %img.blue{ src: "/menu_icon_blue.svg", alt: "Menu" } 
+          / %svg{ height: "25px", version: "1.1", viewBox: "0 0 25 25", width: "18px", xmlns: "http://www.w3.org/2000/svg", :'xmlns:sketch' => "http://www.bohemiancoding.com/sketch/ns", :'xmlns:xlink' => "http://www.w3.org/1999/xlink" }
+          /   %g{ fill: "none", :'fill-rule' => "evenodd", id: "TabBar-Icons", stroke: "none", :'stroke-width' => "1" }
+          /     %g{ fill: "#000000", id: "Hamburger" }
+          /       %path{ d: "M0,2 L25,2 L25,6 L0,6 L0,2 Z M0,10 L25,10 L25,14 L0,14 L0,10 Z M0,18 L25,18 L25,22 L0,22 L0,18 Z" }
         %span
           %strong Borderland Media, LLC
       .right
         %span
-          %a.language-button{ href: "" } 
-            %strong 日本語
+          - if @jp
+            %a.language-button{ href: "/" } ENG
+          - else
+            %a.language-button{ href: "/jp/" } 日本語
 
     .page-wrapper
       = yield
@@ -31,8 +34,10 @@
     #footer
       %p.copyright= "&copy; #{Time.new.year} Borderland Media, LLC. All Rights Reserved."
 
-    = haml :'_navigation_modal'
-
+    - if @jp
+      = haml :'jp/_navigation_modal'
+    - else
+      = haml :'_navigation_modal'
 
 %script{ :src=> "http://code.jquery.com/jquery-1.10.2.min.js" }
 %script{ :src=> "/application.js" }

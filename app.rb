@@ -44,7 +44,19 @@ end
 
 get '/:project' do
   @page = params[:project]
-  # haml :index
+  haml :projects, layout: :projects_layout
+end
+
+get '/jp/' do
+  @jp = true
+  
+  haml :'jp/index'
+end
+
+get '/jp/:project' do
+  @jp = true
+  @page = params[:project]
+
   haml :projects, layout: :projects_layout
 end
 
