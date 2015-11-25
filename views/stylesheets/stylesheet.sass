@@ -276,9 +276,10 @@ a
       //   li:first-child
       //     border-top; 1px solid white
 
-    @media only screen and (max-device-width: 880px)
-      .title
-        border-bottom: 1px solid white
+    .title
+      @media only screen and (max-device-width: 880px)
+        h2
+          border-bottom: 1px solid white
 
   .work, .about
     margin-left: 20px
