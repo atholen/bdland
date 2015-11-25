@@ -1,15 +1,15 @@
 # application.coffee
 
 window.addEventListener "popstate", (e) ->
-  proj = $(".center-content").attr( "project_page" )
-  currentSection = projects.indexOf proj
+  # proj = $(".center-content").attr( "project_page" )
+  # currentSection = projects.indexOf proj
 
-  newSection = projects.indexOf location.pathname.split( "/" )[1]
+  # newSection = projects.indexOf location.pathname.split( "/" )[1]
 
-  console.log newSection
-  console.log currentSection
+  # console.log newSection
+  # console.log currentSection
 
-  switchPage newSection, currentSection
+  # switchPage newSection, currentSection
 
 projects = [ "ryuichisakamoto", "yoshitakaamano", "ericclapton", "lostintranslation", "marcjacobs" ]
 

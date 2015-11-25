@@ -1,7 +1,7 @@
 // index.haml
 
 #video
-  %video{ autoplay: "", loop: "", poster: "/video_fallback.jpg" }
+  %video{ autoplay: "", controls: "true", loop: "", poster: "/video_fallback.jpg" }
     - case @video_number
       - when 0
         %source{ src: "/Videos/Loop 9.webm", type: "video/webm" }
