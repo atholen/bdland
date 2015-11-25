@@ -119,6 +119,10 @@ a
     margin-top: 8px
     padding-bottom: 12px
     padding-left: 20px
+    @media only screen and (max-device-width: 880px)
+      margin-top: 16px
+      padding-bottom: 24px
+      padding-left: 40px
     a
       position: relative
       img
@@ -127,7 +131,7 @@ a
         position: relative
         top: 4px
         @media only screen and (max-device-width: 880px)
-          width: 30px
+          width: 50px
         &:not(.blue)
           -webkit-filter: invert(1)
           filter: invert(1)
@@ -170,7 +174,6 @@ a
     @media only screen and (max-device-width: 880px)
       h2 
         padding-bottom: 0.5em 
-        font-weight: 400
         border-bottom: 1px solid $almost-black
   .information
     ul
