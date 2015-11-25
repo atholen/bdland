@@ -103,7 +103,6 @@ a
     @include simpleEaseFast()
     &:hover
       color: #0000ff
-
   .right
     float: right
     margin-top: 8px
@@ -120,21 +119,13 @@ a
     padding-left: 20px
     a
       position: relative
-      // svg
-      //   display: inline-block
-      //   width: 18px
-      //   position: relative
-      //   top: 7px
-      //   g
-      //     fill: white
-      //     @include simpleEaseFast()
-      //     &:hover
-      //       fill: blue
       img
         display: inline-block
         width: 18px
         position: relative
         top: 4px
+        @media only screen and (max-device-width: 880px)
+          width: 30px
         &:not(.blue)
           -webkit-filter: invert(1)
           filter: invert(1)
@@ -151,6 +142,8 @@ a
       padding-left: 10px
   span
     margin: 0px
+  @media only screen and (max-device-width: 880px)
+    font-size: 2em !important
 
 .section
   display: table
@@ -167,7 +160,7 @@ a
     @media only screen and (max-device-width: 880px)
       display: table-row
       h2
-        font-size: 3em
+        font-size: 4em
       p
         font-size: 3em
   .title
@@ -175,6 +168,7 @@ a
     @media only screen and (max-device-width: 880px)
       h2 
         padding-bottom: 0.5em 
+        font-weight: 400
         border-bottom: 1px solid $almost-black
   .information
     ul
