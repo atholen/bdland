@@ -128,4 +128,10 @@ $(document).ready ->
     $("#navigation-modal").fadeOut 100, () ->
       $("body").removeClass "no-scroll"
 
+  $(".about-button").on 'click', (e) ->
+    # e.preventDefault()
+    
+    $("#navigation-modal").fadeOut 100, () ->
+      $("body").removeClass "no-scroll"
+
     
