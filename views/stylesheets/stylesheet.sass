@@ -147,6 +147,8 @@ a
           @include simpleEaseFast()
           &:hover
             opacity: 1
+          @media only screen and (max-device-width: 880px)
+            top: 10px
     span
       display: inline-block
       padding-left: 10px
@@ -223,18 +225,7 @@ a
   background-color: rgba(0, 0, 255, 0.8)
   color: white
   display: none
-  a
-    color: white
-    @include simpleEaseFast()
-    &:hover
-      color: black
-  .section
-    border-top: 1px solid white
-    margin-top: 20px
-    color: white
-    .information
-      li:not(:first-child)
-        border-top: 1px solid white   
+
   .navigation-bar
     margin-top: 10px
     margin-left: 20px
@@ -248,18 +239,37 @@ a
     span
       display: inline-block
       padding-left: 10px
+
     @media only screen and (max-device-width: 880px)
       font-size: 3em 
       margin-right: 40px
-      margin-top: 20px
+      margin-top: 16px
       img
         width: 50px
         top: 16px
-      padding-left: 24px
+      span
+        padding-left: 24px
+
+  a
+    color: white
+    @include simpleEaseFast()
+    &:hover
+      color: black
+
+  .section
+    border-top: 1px solid white
+    margin-top: 20px
+    color: white
+    .information
+      li:not(:first-child)
+        border-top: 1px solid white  
 
   .work, .about
     margin-left: 20px
     margin-right: 20px
+    @media only screen and (max-device-width: 880px)
+      margin-left: 40px
+      margin-right: 40px
 
 
 
