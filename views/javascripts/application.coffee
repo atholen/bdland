@@ -73,6 +73,12 @@ switchPage = ( newSection, currentSection ) ->
 
   $(".center-content").attr( "project_page", pageToShow )
 
+  url = $(".language-button").attr("href")
+  if url.indexOf( "js" ) >= 0
+    $(".language-button").attr( "href", "/js/#{pageToShow}" )
+  else
+    $(".language-button").attr( "href", "/#{pageToShow}" )
+
   window.history.pushState null, null, "/#{pageToShow}"
 
 arrowListeners = () ->
