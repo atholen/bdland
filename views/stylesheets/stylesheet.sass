@@ -315,13 +315,17 @@ a
   #navigation-bar
     z-index: 100
     background-color: rgba( 255, 255, 255, 1)
-    color: $almost-black2    a.menu-button
+    color: $almost-black2    
+    a.menu-button
       position: relative
       img
         display: inline-block
         width: 18px
         position: relative
         top: 4px
+        @media only screen and (max-device-width: 880px)
+          width: 50px
+          top: 12px
         &:not(.blue)
           -webkit-filter: invert(0)
           filter: invert(0)
