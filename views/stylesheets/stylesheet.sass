@@ -344,7 +344,7 @@ a
         color: #00F
       &.language-button
         @media only screen and (max-device-width: 880px)
-          font-size: 1.5em !important
+          font-size: 1em !important
           top: 20px
 
     #border-bottom
@@ -414,6 +414,9 @@ a
             @include simpleEaseFast()
             &:hover
               color: blue
+          @media only screen and (max-device-width: 880px)
+            font-size: 3em
+            font-weight: 200
         &.selected
           display: table
 
