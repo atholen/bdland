@@ -160,12 +160,18 @@ a
   padding-top: 3px
   padding-bottom: 40px
   color: $almost-black
+  @media screen and (max-width: 880px)
+    border-top: none
   .title, .information
     display: table-cell
     @media screen and (max-width: 880px)
       display: table-row
   .title
     width: 25%
+    @media screen and (max-width: 880px)
+      h2 
+        padding-bottom: 0.5em 
+        border-bottom: 1px solid $almost-black
   .information
     ul
       list-style-type: none
@@ -175,6 +181,8 @@ a
         margin-bottom: 1.5em 
     p
       line-height: 1.2em
+       
+
 
 .page-wrapper
   width: 100vw
