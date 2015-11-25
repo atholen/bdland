@@ -376,6 +376,7 @@ a
         @include simpleEaseFast()
         &:hover
           opacity: 1
+
     .left-arrow
       img
         left: 20px
@@ -414,18 +415,16 @@ a
             @include simpleEaseFast()
             &:hover
               color: blue
-          // @media only screen and (max-device-width: 880px)
-          //   h2
-          //     font-size: 2em
-          //     font-weight: 200
         &.selected
           display: table
+      @media only screen and (max-device-width: 880px)
+        display: table
+        .arrow-wrapper, .center-content
+          display: table-row
+        .arrow-wrapper
+          .left-arrow, .right-arrow
+            display: table-cell
 
-  // #footer
-  //   position: fixed
-  //   bottom: 0
-  //   &.not-fixed-to-bottom
-  //     position: static
 
   .error-page
     margin-top: 10px
