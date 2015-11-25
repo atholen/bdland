@@ -315,9 +315,7 @@ a
   #navigation-bar
     z-index: 100
     background-color: rgba( 255, 255, 255, 1)
-    color: $almost-black
-    // border-bottom: 1px solid $almost-black
-    a.menu-button
+    color: $almost-black2    a.menu-button
       position: relative
       img
         display: inline-block
@@ -340,17 +338,20 @@ a
       @include simpleEaseFast()
       &:hover
         color: #00F
+
     #border-bottom
       border-bottom: 1px solid $almost-black
       margin: 43px 20px 0px 20px
       @media only screen and (max-device-width: 880px)
-        margin-top: 100px
+        margin-top: 120px
         margin-left: 40px
         margin-right: 40px
 
   .page-wrapper
     width: 100vw
     padding-top: 45px
+    @media only screen and (max-device-width: 880px)
+      padding-top: 120px
 
   .project-pane
     // display: table
