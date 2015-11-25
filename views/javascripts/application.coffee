@@ -1,7 +1,15 @@
 # application.coffee
 
 window.addEventListener "popstate", (e) ->
-  switchPage location.pathname.split( "/" )[1]
+  proj = $(".center-content").attr( "project_page" )
+  currentSection = projects.indexOf proj
+
+  newSection = projects.indexOf location.pathname.split( "/" )[1]
+
+  console.log newSection
+  console.log currentSection
+
+  switchPage newSection, currentSection
 
 projects = [ "ryuichisakamoto", "yoshitakaamano", "ericclapton", "lostintranslation", "marcjacobs" ]
 
@@ -12,14 +20,22 @@ $allVideos = $("iframe")
 $allVideos.each ->
   $(this).data('aspectRatio', @height / @width).removeAttr('height').removeAttr 'width'
 
-$(window).resize( ->
-  newWidth = $(".measuring-stick").width()
+  newWidth = $(".selected .information").width() - 40
+  $(this).width(newWidth).height newWidth * $(this).data('aspectRatio')
+
+runningPageWidth = $(window).width()
+
+$(window).resize( (e) ->
+  curPageWidth = $(window).width()
+  deltaWidth   = curPageWidth - runningPageWidth
 
   $allVideos.each ->
     $el = $(this)
-    $el.width(newWidth).height newWidth * $el.data('aspectRatio')
-    return
-  return
+    newWidth = $el.width() + deltaWidth 
+    console.log newWidth
+    $el.width( newWidth ).height newWidth * $el.data('aspectRatio')
+
+  runningPageWidth = curPageWidth
 ).resize()
 
 
