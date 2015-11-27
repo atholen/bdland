@@ -11,34 +11,6 @@ $almost-black: #212121
 ::-webkit-scrollbar 
   -webkit-appearance: none
   width: 0px
- 
-// ::-webkit-scrollbar-track 
-//   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
-//   -webkit-border-radius: 0px
-//   background:rgba(28,28,28,0)
-
-// body::-webkit-scrollbar-track 
-//   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
-//   -webkit-border-radius: 0px
-//   background: black !important
-
-// body::-webkit-scrollbar-track:window-inactive 
-//   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) 
-//   -webkit-border-radius: 0px
-//   background: black !important
-
-// ::-webkit-scrollbar-track:window-inactive 
-//   -webkit-box-shadow: inset 0 0 0px rgba(0,0,0,0) 
-//   background: rgba(28,28,28,0)
-
-// ::-webkit-scrollbar-thumb 
-//   -webkit-border-radius: 10px
-//   border-radius: 10px
-//   background: rgba(150,150,150,1) 
-//   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.4) 
-
-// ::-webkit-scrollbar:window-inactive
-//   width: 0px
 
 @mixin simpleEase()
   -webkit-transition: all 0.5s ease
@@ -78,7 +50,8 @@ html
       overflow-y        : hidden
       overflow-x        : hidden
     &.no-scroll
-      overflow: hidden
+      .page-wrapper
+        overflow: hidden
 
 a
   text-decoration   : none
@@ -107,24 +80,15 @@ a
     margin-top: 8px
     padding-bottom: 12px
     padding-right: 20px
-    // @media only screen and (max-width: 600px)
-    //   padding-right: 40px
     .language-button
       position: relative
       top: 2px
       font-size: small
-      // @media only screen and (max-width: 600px)
-      //   font-size: 1.5em !important
-      //   top: 20px
   .left
     float: left
     margin-top: 8px
     padding-bottom: 12px
     padding-left: 20px
-    // @media only screen and (max-width: 600px)
-    //   margin-top: 32px
-    //   padding-bottom: 48px
-    //   padding-left: 40px
     a
       position: relative
       img
@@ -132,9 +96,6 @@ a
         width: 18px
         position: relative
         top: 4px
-        // @media only screen and (max-width: 600px)
-        //   width: 50px
-        //   top: 12px
         &:not(.blue)
           -webkit-filter: invert(1)
           filter: invert(1)
@@ -146,17 +107,11 @@ a
           @include simpleEaseFast()
           &:hover
             opacity: 1
-          // @media only screen and (max-width: 600px)
-          //   top: 10px
     span
       display: inline-block
       padding-left: 10px
-      // @media only screen and (max-width: 600px)
-      //   padding-left: 24px
   span
     margin: 0px
-  // @media only screen and (max-width: 600px)
-  //   font-size: 3em 
 
 
 
@@ -180,8 +135,6 @@ a
     width: 25%
     @media only screen and (max-width: 600px)
       h2 
-        // padding-bottom: 0.5em 
-        // font-size: 4em
         border-bottom: 1px solid $almost-black
 
   .information
@@ -193,12 +146,6 @@ a
         margin-bottom: 1.5em 
     p
       line-height: 1.5em
-    // @media only screen and (max-width: 600px)
-    //   h2
-    //     font-size: 2.5em
-    //     font-weight: 300
-    //   p
-    //     font-size: 3em
        
 
 
@@ -215,9 +162,6 @@ a
   .work, .about
     margin-left: 20px
     margin-right: 20px
-    // @media only screen and (max-width: 600px)
-    //   margin-left: 40px
-    //   margin-right: 40px
 
 
 
@@ -227,18 +171,16 @@ a
   top: 0
   left: 0
   width: 100vw
-  height: 100vh
+  // height: 100vh
+  height: 100%
   background-color: rgba(0, 0, 255, 0.9)
   color: white
   display: none
+  overflow-y: scroll
 
   .navigation-bar
     margin-top: 10px
     margin-left: 20px
-    // @media only screen and (max-width: 600px)
-    //   font-size: 3em 
-    //   margin-right: 40px
-    //   margin-top: 26px
     img
       display: inline-block
       width: 18px
@@ -246,15 +188,9 @@ a
       top: 3px
       -webkit-filter: invert(1)
       filter: invert(1)
-      // @media only screen and (max-width: 600px)
-      //   width: 50px
-      //   top: 14px
-      //   left: 14px
     span
       display: inline-block
       padding-left: 10px
-      // @media only screen and (max-width: 600px)
-      //   padding-left: 26px
 
   a
     color: white
@@ -281,9 +217,6 @@ a
   .work, .about
     margin-left: 20px
     margin-right: 20px
-    // @media only screen and (max-width: 600px)
-    //   margin-left: 40px
-    //   margin-right: 40px
 
 
 
@@ -300,8 +233,6 @@ a
     padding-right: 10px
     margin-bottom: 13px
     font-size: small
-    // @media only screen and (max-width: 600px)
-    //   font-size: 2em
 
 
 
@@ -322,9 +253,6 @@ a
         width: 18px
         position: relative
         top: 4px
-        // @media only screen and (max-width: 600px)
-        //   width: 50px
-        //   top: 12px
         &:not(.blue)
           -webkit-filter: invert(0)
           filter: invert(0)
@@ -341,29 +269,16 @@ a
       @include simpleEaseFast()
       &:hover
         color: #00F
-      &.language-button
-        // @media only screen and (max-width: 600px)
-        //   font-size: 1em !important
-        //   top: 20px
 
     #border-bottom
       border-bottom: 1px solid $almost-black
       margin: 43px 20px 0px 20px
-      // @media only screen and (max-width: 600px)
-      //   margin-top: 134px
-      //   margin-left: 40px
-      //   margin-right: 40px
 
   .page-wrapper
     width: 100vw
     padding-top: 45px
-    // @media only screen and (max-width: 600px)
-    //   padding-top: 150px
 
   .project-pane
-    // display: table
-    // .left-arrow, .center-content, .right-arrow
-      // display: table-cell
     .left-arrow, .right-arrow
       vertical-align: middle
       text-align: center
@@ -418,29 +333,6 @@ a
       width: calc( 100% - 80px )
       margin-left: 40px
       margin-right: 40px
-
-    // @media only screen and (max-width: 600px)
-    //   width: 100%
-    //   display: table
-    //   .arrow-wrapper, .center-content
-    //     display: table-row
-    //   .arrow-wrapper
-    //     .left-arrow, .right-arrow
-    //       display: table-cell
-    //       img
-    //         position: static !important
-    //         width: 80px
-    //     .left-arrow
-    //       float: left
-    //       padding-left: 30px
-    //     .right-arrow
-    //       float: right
-    //       padding-right: 30px
-
-    //   .section.selected
-    //     width: calc( 100% - 80px )
-    //     margin-left: 40px
-    //     margin-right: 40px
 
 
   .error-page
