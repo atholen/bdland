@@ -8,7 +8,6 @@ $japanense  : "Hiragino Kaku Gothic Pro", sans-serif
 
 $almost-black: #212121
 
-
 ::-webkit-scrollbar 
   -webkit-appearance: none
   width: 0px
@@ -108,24 +107,24 @@ a
     margin-top: 8px
     padding-bottom: 12px
     padding-right: 20px
-    @media only screen and (max-device-width: 880px)
-      padding-right: 40px
+    // @media only screen and (max-width: 600px)
+    //   padding-right: 40px
     .language-button
       position: relative
       top: 2px
       font-size: small
-      @media only screen and (max-device-width: 880px)
-        font-size: 1.5em !important
-        top: 20px
+      // @media only screen and (max-width: 600px)
+      //   font-size: 1.5em !important
+      //   top: 20px
   .left
     float: left
     margin-top: 8px
     padding-bottom: 12px
     padding-left: 20px
-    @media only screen and (max-device-width: 880px)
-      margin-top: 32px
-      padding-bottom: 48px
-      padding-left: 40px
+    // @media only screen and (max-width: 600px)
+    //   margin-top: 32px
+    //   padding-bottom: 48px
+    //   padding-left: 40px
     a
       position: relative
       img
@@ -133,9 +132,9 @@ a
         width: 18px
         position: relative
         top: 4px
-        @media only screen and (max-device-width: 880px)
-          width: 50px
-          top: 12px
+        // @media only screen and (max-width: 600px)
+        //   width: 50px
+        //   top: 12px
         &:not(.blue)
           -webkit-filter: invert(1)
           filter: invert(1)
@@ -147,17 +146,17 @@ a
           @include simpleEaseFast()
           &:hover
             opacity: 1
-          @media only screen and (max-device-width: 880px)
-            top: 10px
+          // @media only screen and (max-width: 600px)
+          //   top: 10px
     span
       display: inline-block
       padding-left: 10px
-      @media only screen and (max-device-width: 880px)
-        padding-left: 24px
+      // @media only screen and (max-width: 600px)
+      //   padding-left: 24px
   span
     margin: 0px
-  @media only screen and (max-device-width: 880px)
-    font-size: 3em 
+  // @media only screen and (max-width: 600px)
+  //   font-size: 3em 
 
 
 
@@ -169,20 +168,20 @@ a
   padding-top: 3px
   padding-bottom: 40px
   color: $almost-black
-  @media only screen and (max-device-width: 880px)
+  @media only screen and (max-width: 600px)
     border-top: none
 
   .title, .information
     display: table-cell
-    @media only screen and (max-device-width: 880px)
+    @media only screen and (max-width: 600px)
       display: table-row
 
   .title
     width: 25%
-    @media only screen and (max-device-width: 880px)
+    @media only screen and (max-width: 600px)
       h2 
-        padding-bottom: 0.5em 
-        font-size: 4em
+        // padding-bottom: 0.5em 
+        // font-size: 4em
         border-bottom: 1px solid $almost-black
 
   .information
@@ -194,12 +193,12 @@ a
         margin-bottom: 1.5em 
     p
       line-height: 1.5em
-    @media only screen and (max-device-width: 880px)
-      h2
-        font-size: 2.5em
-        font-weight: 300
-      p
-        font-size: 3em
+    // @media only screen and (max-width: 600px)
+    //   h2
+    //     font-size: 2.5em
+    //     font-weight: 300
+    //   p
+    //     font-size: 3em
        
 
 
@@ -216,9 +215,9 @@ a
   .work, .about
     margin-left: 20px
     margin-right: 20px
-    @media only screen and (max-device-width: 880px)
-      margin-left: 40px
-      margin-right: 40px
+    // @media only screen and (max-width: 600px)
+    //   margin-left: 40px
+    //   margin-right: 40px
 
 
 
@@ -229,17 +228,17 @@ a
   left: 0
   width: 100vw
   height: 100vh
-  background-color: rgba(0, 0, 255, 0.8)
+  background-color: rgba(0, 0, 255, 0.9)
   color: white
   display: none
 
   .navigation-bar
     margin-top: 10px
     margin-left: 20px
-    @media only screen and (max-device-width: 880px)
-      font-size: 3em 
-      margin-right: 40px
-      margin-top: 26px
+    // @media only screen and (max-width: 600px)
+    //   font-size: 3em 
+    //   margin-right: 40px
+    //   margin-top: 26px
     img
       display: inline-block
       width: 18px
@@ -247,15 +246,15 @@ a
       top: 3px
       -webkit-filter: invert(1)
       filter: invert(1)
-      @media only screen and (max-device-width: 880px)
-        width: 50px
-        top: 14px
-        left: 14px
+      // @media only screen and (max-width: 600px)
+      //   width: 50px
+      //   top: 14px
+      //   left: 14px
     span
       display: inline-block
       padding-left: 10px
-      @media only screen and (max-device-width: 880px)
-        padding-left: 26px
+      // @media only screen and (max-width: 600px)
+      //   padding-left: 26px
 
   a
     color: white
@@ -267,7 +266,7 @@ a
     border-top: 1px solid white
     margin-top: 20px
     color: white
-    @media only screen and (max-device-width: 880px)
+    @media only screen and (max-width: 600px)
       border-top: none
 
     .information
@@ -275,16 +274,16 @@ a
         border-top: 1px solid white
 
     .title
-      @media only screen and (max-device-width: 880px)
+      @media only screen and (max-width: 600px)
         h2
           border-bottom: 1px solid white
 
   .work, .about
     margin-left: 20px
     margin-right: 20px
-    @media only screen and (max-device-width: 880px)
-      margin-left: 40px
-      margin-right: 40px
+    // @media only screen and (max-width: 600px)
+    //   margin-left: 40px
+    //   margin-right: 40px
 
 
 
@@ -295,14 +294,14 @@ a
   border-top: 1px solid $almost-black
   margin-top: 40px
   color: $almost-black
-  @media only screen and (max-device-width: 880px)
+  @media only screen and (max-width: 600px)
     text-align: center
   p
     padding-right: 10px
     margin-bottom: 13px
     font-size: small
-    @media only screen and (max-device-width: 880px)
-      font-size: 2em
+    // @media only screen and (max-width: 600px)
+    //   font-size: 2em
 
 
 
@@ -323,9 +322,9 @@ a
         width: 18px
         position: relative
         top: 4px
-        @media only screen and (max-device-width: 880px)
-          width: 50px
-          top: 12px
+        // @media only screen and (max-width: 600px)
+        //   width: 50px
+        //   top: 12px
         &:not(.blue)
           -webkit-filter: invert(0)
           filter: invert(0)
@@ -343,23 +342,23 @@ a
       &:hover
         color: #00F
       &.language-button
-        @media only screen and (max-device-width: 880px)
-          font-size: 1em !important
-          top: 20px
+        // @media only screen and (max-width: 600px)
+        //   font-size: 1em !important
+        //   top: 20px
 
     #border-bottom
       border-bottom: 1px solid $almost-black
       margin: 43px 20px 0px 20px
-      @media only screen and (max-device-width: 880px)
-        margin-top: 134px
-        margin-left: 40px
-        margin-right: 40px
+      // @media only screen and (max-width: 600px)
+      //   margin-top: 134px
+      //   margin-left: 40px
+      //   margin-right: 40px
 
   .page-wrapper
     width: 100vw
     padding-top: 45px
-    @media only screen and (max-device-width: 880px)
-      padding-top: 150px
+    // @media only screen and (max-width: 600px)
+    //   padding-top: 150px
 
   .project-pane
     // display: table
@@ -415,28 +414,33 @@ a
         &.selected
           display: table
 
-    @media only screen and (max-device-width: 880px)
-      width: 100%
-      display: table
-      .arrow-wrapper, .center-content
-        display: table-row
-      .arrow-wrapper
-        .left-arrow, .right-arrow
-          display: table-cell
-          img
-            position: static !important
-            width: 80px
-        .left-arrow
-          float: left
-          padding-left: 30px
-        .right-arrow
-          float: right
-          padding-right: 30px
+    @media only screen and (max-width: 600px)
+      width: calc( 100% - 80px )
+      margin-left: 40px
+      margin-right: 40px
 
-      .section.selected
-        width: calc( 100% - 80px )
-        margin-left: 40px
-        margin-right: 40px
+    // @media only screen and (max-width: 600px)
+    //   width: 100%
+    //   display: table
+    //   .arrow-wrapper, .center-content
+    //     display: table-row
+    //   .arrow-wrapper
+    //     .left-arrow, .right-arrow
+    //       display: table-cell
+    //       img
+    //         position: static !important
+    //         width: 80px
+    //     .left-arrow
+    //       float: left
+    //       padding-left: 30px
+    //     .right-arrow
+    //       float: right
+    //       padding-right: 30px
+
+    //   .section.selected
+    //     width: calc( 100% - 80px )
+    //     margin-left: 40px
+    //     margin-right: 40px
 
 
   .error-page
