@@ -55,7 +55,7 @@ get '/:project' do
 end
 
 get '/jp/' do
-  @video_number = rand( 7 )
+  @video_number = rand( 6 )
   @jp = true
   
   haml :'jp/index'
